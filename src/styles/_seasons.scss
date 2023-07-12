@@ -1,0 +1,111 @@
+@use 'variaveis';
+
+.seasons {
+    padding: 2vw 5.6vw;
+    min-height: 50vw;
+
+    .title--small {
+        display: flex;
+        justify-content: center;
+        font-weight: 400;
+    }
+
+    &__list {
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 24px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+
+            img {
+                max-width: 75%;
+            }
+        }
+
+        &__item {
+            img {
+                max-width: 100%;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+
+        @media (max-width: 768px) { // Shows - Abas
+            white-space: nowrap; // Forçando as palavras a ficarem na mesma linha
+            overflow-x: scroll; // Adicionando um scroll
+            padding-left: 230px;
+        }
+
+        &__button {
+            color: variaveis.$corTextoSecundario;
+            font-size: 15px;
+            border: none;
+            padding-bottom: 5px;
+            background: none;
+            text-transform: uppercase;
+            margin: 0 3vw;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+
+            &--is-active {
+                border-color: variaveis.$corTextoSecundario;
+            }
+
+            @media (max-width: 768px) { // Shows - Botões das abas
+                font-size: 16px; // Redimensionando as fontes
+            }
+        }
+    }
+
+    &__tab { // Modificador para a aba
+        display: none;
+
+        &--is-active {
+            display: grid;
+
+            @media (max-width: 768px) {
+                text-align: center;
+            }
+        }
+    }
+
+    &__about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        //margin: 40px 225px 32px;
+        margin: 2.12vw 12vw 1.7vw;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+
+        &__text {
+            &:first-child {
+                margin-top: 20px;
+            }
+            
+            :nth-child(2) {
+                margin-bottom: 24px;
+                font-size: 18px;
+            }
+
+            .text {
+                margin-bottom: 24px;
+            }
+        }
+
+        img {
+            width: 350px;
+
+            @media (max-width: 768px) {
+                width: 200px;
+            }
+        }
+    }
+}

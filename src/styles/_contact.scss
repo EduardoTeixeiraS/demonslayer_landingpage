@@ -1,0 +1,59 @@
+@use 'variaveis';
+
+.contact {
+    padding: 0 10vw 2vw;
+
+    &__social {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 768px) {
+            display: block;
+            text-align: center;
+
+            .title--small {
+                font-size: 21px;
+            }
+        }
+        
+        &__email {
+            text-align: center;
+
+            @media (max-width: 768px) {
+                margin: 36px 0;
+            }
+
+            .button {
+                padding: 12px 20px;
+                border: none;
+                background-color: variaveis.$corTextoPrincipal;
+                color: variaveis.$corDeFundo;
+                border-radius: 5px;
+                font-size: 15px;
+                cursor: pointer;
+            }
+            
+            .title--small {
+                line-height: 30px;
+            }
+        }
+        
+        .title--small {
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        &__list {
+            display: flex;
+
+            @media (max-width: 768px) {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            &__item {
+                margin-right: 12px;
+            }
+        }
+    }
+}

@@ -1,0 +1,103 @@
+@use 'variaveis';
+@use 'hero';
+@use 'seasons';
+@use 'contact';
+
+@font-face {
+    font-family: Lora;
+    src: url(../../assets/fonts/Lora-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Lora;
+    src: url(../../assets/fonts/Lora-SemiBold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: BloodCrow;
+    src: url(../../assets/fonts/bloodcrow.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Lora, serif;
+    list-style-type: none;
+}
+
+body {
+    background-color: variaveis.$corDeFundo;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$corTextoPrincipal;
+}
+
+@mixin title($fontSize: 40px) {
+    @include text($fontSize);
+    color: variaveis.$corTextoSecundario;
+    font-family: BloodCrow, serif;
+}
+
+.text--big {
+    @include text(18px);
+
+    @media (max-width: 768px) { // Celular - Fontes (Tamanho)
+        @include text(15px);
+    }
+}
+
+.text {
+    @include text;
+
+    @media (max-width: 768px) { // Celular - Fontes (Tamanho)
+        @include text(14px);
+    }
+}
+
+.text--small {
+    @include text(12px);
+
+    @media (max-width: 768px) { // Celular - Fontes (Tamanho)
+        @include text(11px);
+    }
+}
+
+.link-text {
+    @include text(18px);
+    color: variaveis.$corTextoSecundario;
+    text-decoration: underline;
+}
+
+.title--big {
+    @include title(44px);
+
+    @media (max-width: 768px) { // Celular - Fontes (Tamanho)
+        @include title(26px);
+    }
+}
+
+.title {
+    @include title;
+
+    @media (max-width: 768px) { // Celular - Fontes (Tamanho)
+        @include title(24px);
+    }
+}
+
+.title--small {
+    @include title(28px);
+
+    @media (max-width: 768px) { // Celular - Fontes (Tamanho)
+        @include title(22px);
+    }
+}
+
+.section__line {
+    margin-top: 25px;
+}
